@@ -1,0 +1,5 @@
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.csproj.AssemblyReference.cache
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.AssemblyInfoInputs.cache
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.AssemblyInfo.cs
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.csproj.CoreCompileInputs.cache

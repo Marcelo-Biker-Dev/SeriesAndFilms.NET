@@ -4,10 +4,10 @@ namespace SeriesAndFilms.NET.Interfaces
 {
     public interface IRepository<T>
     {
-        List<T> Lista();
-        T ChooseById(int id);        
+        List<T> List();
+        T CheckById(int id);        
         void Insert(T entidade);        
-        void Delete(int id);        
+        void Exclude(int id);        
         void Update(int id, T entidade);
         int NextId();
     }

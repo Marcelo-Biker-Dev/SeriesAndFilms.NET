@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using SeriesAndFilms.NET.Enum;
 
 namespace SeriesAndFilms.NET.Entities
@@ -8,49 +7,49 @@ namespace SeriesAndFilms.NET.Entities
     {
         // Atributos
 		private Genre Genre { get; set; }
-		private string Titulo { get; set; }
-		private string Descricao { get; set; }
-		private int Ano { get; set; }
-        private bool Excluido {get; set;}
+		private string Title { get; set; }
+		private string Description { get; set; }
+		private int Year { get; set; }
+        private bool Excluded {get; set;}
 
         // Métodos
-		public Serie(int id, Genre genre, string titulo, string descricao, int ano)
+		public Serie(int id, Genre genre, string title, string description, int year)
 		{
 			this.Id = id;
 			this.Genre = genre;
-			this.Titulo = titulo;
-			this.Descricao = descricao;
-			this.Ano = ano;
-            this.Excluido = false;
+			this.Title = title;
+			this.Description = description;
+			this.Year = year;
+            this.Excluded = false;
 		}
 
         public override string ToString()
 		{
 			// Environment.NewLine https://docs.microsoft.com/en-us/dotnet/api/system.environment.newline?view=netcore-3.1
-            string retorno = "";
-            retorno += "Gênero: " + this.Genre + Environment.NewLine;
-            retorno += "Titulo: " + this.Titulo + Environment.NewLine;
-            retorno += "Descrição: " + this.Descricao + Environment.NewLine;
-            retorno += "Ano de Início: " + this.Ano + Environment.NewLine;
-            retorno += "Excluido: " + this.Excluido;
-			return retorno;
+            string compiled = "";
+            compiled += "Genre: " + this.Genre + Environment.NewLine;
+            compiled += "Title: " + this.Title + Environment.NewLine;
+            compiled += "Description: " + this.Description + Environment.NewLine;
+            compiled += "Year of release: " + this.Year + Environment.NewLine;
+            compiled += "Excluded: " + this.Excluded;
+			return compiled;
 		}
 
-        public string retornaTitulo()
+        public string returnTitle()
 		{
-			return this.Titulo;
+			return this.Title;
 		}
 
-		public int retornaId()
+		public int returnId()
 		{
 			return this.Id;
 		}
-        public bool retornaExcluido()
+        public bool returnExcluded()
 		{
-			return this.Excluido;
+			return this.Excluded;
 		}
-        public void Excluir() {
-            this.Excluido = true;
+        public void Exclude() {
+            this.Excluded = true;
         }    
     }
 }

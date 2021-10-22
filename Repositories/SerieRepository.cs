@@ -1,41 +1,40 @@
-using System;
 using System.Collections.Generic;
 using SeriesAndFilms.NET.Entities;
 using SeriesAndFilms.NET.Interfaces;
 
 namespace SeriesAndFilms.NET.Repositories
 {
-    public class SerieRepositorio : IRepository<Serie>
+    public class SerieRepository : IRepository<Serie>
 	{
-        private List<Serie> listaSerie = new List<Serie>();
-		public void Atualiza(int id, Serie objeto)
+        private List<Serie> listSerie = new List<Serie>();
+		public void Update(int id, Serie entity)
 		{
-			listaSerie[id] = objeto;
+			listSerie[id] = entity;
 		}
 
-		public void Exclui(int id)
+		public void Exclude(int id)
 		{
-			listaSerie[id].Excluir();
+			listSerie[id].Exclude();
 		}
 
-		public void Insere(Serie objeto)
+		public void Insert(Serie entity)
 		{
-			listaSerie.Add(objeto);
+			listSerie.Add(entity);
 		}
 
-		public List<Serie> Lista()
+		public List<Serie> List()
 		{
-			return listaSerie;
+			return listSerie;
 		}
 
-		public int ProximoId()
+		public int NextId()
 		{
-			return listaSerie.Count;
+			return listSerie.Count;
 		}
 
-		public Serie RetornaPorId(int id)
+		public Serie CheckById(int id)
 		{
-			return listaSerie[id];
+			return listSerie[id];
 		}
     }
 }
