@@ -1,5 +1,4 @@
 using System;
-using SeriesAndFilms.NET.Enum;
 
 namespace SeriesAndFilms.NET.Entities
 {
@@ -35,16 +34,16 @@ namespace SeriesAndFilms.NET.Entities
 			return compiled;
 		}
 
-        public string returnTitle()
+        public string getTitle()
 		{
 			return this.Title;
 		}
 
-		public int returnId()
+		public int getId()
 		{
 			return this.Id;
 		}
-        public bool returnExcluded()
+        public bool getExcluded()
 		{
 			return this.Excluded;
 		}

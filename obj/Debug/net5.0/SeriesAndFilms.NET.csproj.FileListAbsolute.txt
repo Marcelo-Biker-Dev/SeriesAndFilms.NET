@@ -3,3 +3,14 @@ C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.Gen
 C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.AssemblyInfoInputs.cache
 C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.AssemblyInfo.cs
 C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.csproj.CoreCompileInputs.cache
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.exe
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.deps.json
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.runtimeconfig.json
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.runtimeconfig.dev.json
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.dll
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\ref\SeriesAndFilms.NET.dll
+C:\programming\dotnet\SeriesAndFilms.NET\bin\Debug\net5.0\SeriesAndFilms.NET.pdb
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.dll
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\ref\SeriesAndFilms.NET.dll
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.pdb
+C:\programming\dotnet\SeriesAndFilms.NET\obj\Debug\net5.0\SeriesAndFilms.NET.genruntimeconfig.cache

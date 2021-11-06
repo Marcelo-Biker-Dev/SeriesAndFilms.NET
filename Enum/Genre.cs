@@ -1,4 +1,4 @@
-namespace SeriesAndFilms.NET.Enum
+namespace SeriesAndFilms.NET
 {
     public enum Genre
     {

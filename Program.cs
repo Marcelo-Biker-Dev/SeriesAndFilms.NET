@@ -1,6 +1,5 @@
 ﻿using System;
 using SeriesAndFilms.NET.Entities;
-using SeriesAndFilms.NET.Enum;
 using SeriesAndFilms.NET.Repositories;
 
 namespace SeriesAndFilms.NET
@@ -26,7 +25,7 @@ namespace SeriesAndFilms.NET
 						UpdateSerie();
 						break;
 					case "4":
-						excludeSerie();
+						ExcludeSerie();
 						break;
 					case "5":
 						CheckSerie();
@@ -44,7 +43,7 @@ namespace SeriesAndFilms.NET
             string GetUserOption()
             {
                 Console.WriteLine();
-                Console.WriteLine("Welcome to your .NET Series and Films assistant");
+                Console.WriteLine("Welcome to your .NET Series and Films assistant!");
                 Console.WriteLine("Let me know what you want to do:");
                 Console.WriteLine();
                 Console.WriteLine("1- List existent series");
@@ -63,23 +62,52 @@ namespace SeriesAndFilms.NET
 
 			Console.WriteLine("Looking forward to see you back again.");
         }
-
-        private static void excludeSerie()
+        private static void InsertSerie()
 		{
-			Console.Write("Enter Serie Id: ");
-			int indexSerie = int.Parse(Console.ReadLine());
+			Console.WriteLine("Insert new serie");
 
-			repository.Exclude(indexSerie);
+			foreach (int i in Enum.GetValues(typeof(Genre)))
+			{
+				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genre), i));
+			}
+			Console.Write("Choose a Genre from the list above: ");
+			int genreInput = int.Parse(Console.ReadLine());
+
+			Console.Write("Enter a title for the serie: ");
+			string titleInput = Console.ReadLine();
+
+			Console.Write("Enter the year the serie was released: ");
+			int yearInput = int.Parse(Console.ReadLine());
+
+			Console.Write("Enter a description for the serie: ");
+			string descriptionInput = Console.ReadLine();
+
+			Serie newSerie = new Serie(id: repository.NextId(),
+										genre: (Genre)genreInput,
+										title: titleInput,
+										year: yearInput,
+										description: descriptionInput);
+
+			repository.Insert(newSerie);
 		}
-
-        private static void CheckSerie()
+        private static void ListSeries()
 		{
-			Console.Write("Enter Serie Id: ");
-			int indexSerie = int.Parse(Console.ReadLine());
+			Console.WriteLine("List series");
 
-			var serie = repository.CheckById(indexSerie);
+			var list = repository.List();
 
-			Console.WriteLine(serie);
+			if (list.Count == 0)
+			{
+				Console.WriteLine("Sorry, but there is nothing here to show.");
+				return;
+			}
+
+			foreach (var serie in list)
+			{
+                var excluded = serie.getExcluded();
+                
+				Console.WriteLine("#ID {0}: - {1} {2}", serie.getId(), serie.getTitle(), (excluded ? "excluded" : ""));
+			}
 		}
 
         private static void UpdateSerie()
@@ -87,8 +115,6 @@ namespace SeriesAndFilms.NET
 			Console.Write("Enter Serie Id: ");
 			int indexSerie = int.Parse(Console.ReadLine());
 
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getvalues?view=netcore-3.1
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getname?view=netcore-3.1
 			foreach (int i in Enum.GetValues(typeof(Genre)))
 			{
 				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genre), i));
@@ -113,55 +139,21 @@ namespace SeriesAndFilms.NET
 
 			repository.Update(indexSerie, updateSerie);
 		}
-        private static void ListSeries()
+        private static void CheckSerie()
 		{
-			Console.WriteLine("List series");
+			Console.Write("Enter Serie Id: ");
+			int indexSerie = int.Parse(Console.ReadLine());
 
-			var list = repository.List();
+			var serie = repository.GetById(indexSerie);
 
-			if (list.Count == 0)
-			{
-				Console.WriteLine("");
-				return;
-			}
-
-			foreach (var serie in list)
-			{
-                var excluded = serie.returnExcluded();
-                
-				Console.WriteLine("#ID {0}: - {1} {2}", serie.returnId(), serie.returnTitle(), (excluded ? "excluded" : ""));
-			}
+			Console.WriteLine(serie);
 		}
-
-        private static void InsertSerie()
+        private static void ExcludeSerie()
 		{
-			Console.WriteLine("Insert new serie");
+			Console.Write("Enter Serie Id: ");
+			int indexSerie = int.Parse(Console.ReadLine());
 
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getvalues?view=netcore-3.1
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getname?view=netcore-3.1
-			foreach (int i in Enum.GetValues(typeof(Genre)))
-			{
-				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genre), i));
-			}
-			Console.Write("Choose a Genre: ");
-			int genreInput = int.Parse(Console.ReadLine());
-
-			Console.Write("Enter a title for the serie: ");
-			string titleInput = Console.ReadLine();
-
-			Console.Write("Enter the year the serie was released: ");
-			int yearInput = int.Parse(Console.ReadLine());
-
-			Console.Write("Enter a description for the serie: ");
-			string descriptionInput = Console.ReadLine();
-
-			Serie newSerie = new Serie(id: repository.NextId(),
-										genre: (Genre)genreInput,
-										title: titleInput,
-										year: yearInput,
-										description: descriptionInput);
-
-			repository.Insert(newSerie);
+			repository.Exclude(indexSerie);
 		}
     }
 }

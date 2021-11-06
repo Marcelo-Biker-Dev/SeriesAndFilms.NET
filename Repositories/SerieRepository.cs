@@ -6,35 +6,36 @@ namespace SeriesAndFilms.NET.Repositories
 {
     public class SerieRepository : IRepository<Serie>
 	{
-        private List<Serie> listSerie = new List<Serie>();
-		public void Update(int id, Serie entity)
+        private List<Serie> serieList = new List<Serie>();
+
+		public List<Serie> List()
 		{
-			listSerie[id] = entity;
+			return serieList;
+		}
+
+		public Serie GetById(int id)
+		{
+			return serieList[id];
+		}
+
+		public void Insert(Serie serieObject)
+		{
+			serieList.Add(serieObject);
 		}
 
 		public void Exclude(int id)
 		{
-			listSerie[id].Exclude();
+			serieList[id].Exclude();
 		}
-
-		public void Insert(Serie entity)
+		
+		public void Update(int id, Serie serieObject)
 		{
-			listSerie.Add(entity);
-		}
-
-		public List<Serie> List()
-		{
-			return listSerie;
+			serieList[id] = serieObject;
 		}
 
 		public int NextId()
 		{
-			return listSerie.Count;
-		}
-
-		public Serie CheckById(int id)
-		{
-			return listSerie[id];
+			return serieList.Count;
 		}
     }
 }
