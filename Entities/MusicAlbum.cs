@@ -2,16 +2,16 @@ using System;
 
 namespace SeriesAndFilms.NET.Entities
 {
-    public class Serie : EntityBase
+    public class MusicAlbum : EntityBase
     {
-		private Genre Genre { get; set; }
+        private Genre Genre { get; set; }
 		private string Title { get; set; }
 		private string Description { get; set; }
 		private int Year { get; set; }
         private bool Excluded {get; set;}
 
         // Métodos
-		public Serie(int id, Genre genre, string title, string description, int year)
+		public MusicAlbum(int id, Genre genre, string title, string description, int year)
 		{
 			this.Id = id;
 			this.Genre = genre;
@@ -48,6 +48,6 @@ namespace SeriesAndFilms.NET.Entities
 		}
         public void Exclude() {
             this.Excluded = true;
-        }    
+        }  
     }
 }
