@@ -2,16 +2,16 @@ using System;
 
 namespace SeriesAndFilms.NET.Entities
 {
-    public class Serie : EntityBase
+    public class Serie : SerieEntityBase
     {
-		private Genre Genre { get; set; }
+		private SerieGenre Genre { get; set; }
 		private string Title { get; set; }
 		private string Description { get; set; }
 		private int Year { get; set; }
         private bool Excluded {get; set;}
 
         // Métodos
-		public Serie(int id, Genre genre, string title, string description, int year)
+		public Serie(int id, SerieGenre genre, string title, string description, int year)
 		{
 			this.Id = id;
 			this.Genre = genre;

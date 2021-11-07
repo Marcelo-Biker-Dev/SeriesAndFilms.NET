@@ -1,6 +1,6 @@
 namespace SeriesAndFilms.NET
 {
-    public enum Genre
+    public enum SerieGenre
     {
         Action = 1,
 		Adventure = 2,

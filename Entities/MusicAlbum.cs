@@ -2,16 +2,16 @@ using System;
 
 namespace SeriesAndFilms.NET.Entities
 {
-    public class MusicAlbum : EntityBase
+    public class MusicAlbum : MusicAlbumEntityBase
     {
-        private Genre Genre { get; set; }
+        private AlbumGenre Genre { get; set; }
 		private string Title { get; set; }
 		private string Description { get; set; }
 		private int Year { get; set; }
         private bool Excluded {get; set;}
 
         // Métodos
-		public MusicAlbum(int id, Genre genre, string title, string description, int year)
+		public MusicAlbum(int id, AlbumGenre genre, string title, string description, int year)
 		{
 			this.Id = id;
 			this.Genre = genre;

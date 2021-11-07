@@ -6,7 +6,7 @@ namespace SeriesAndFilms.NET.Repositories
 {
     public class MusicAlbumRepository : IRepository<MusicAlbum>
     {
-                private List<MusicAlbum> albumList = new List<MusicAlbum>();
+        private List<MusicAlbum> albumList = new List<MusicAlbum>();
 
 		public List<MusicAlbum> List()
 		{

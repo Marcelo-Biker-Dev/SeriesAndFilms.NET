@@ -1,6 +1,6 @@
 namespace SeriesAndFilms.NET.Entities
 {
-    public abstract class EntityBase
+    public abstract class SerieEntityBase
     {
         public int Id { get; protected set; }
     }
